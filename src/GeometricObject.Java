@@ -24,23 +24,35 @@ public class GeometricObject{
     }
 
     public GeometricObject(double x, double y, double width, double height){
-        this(new Vertex(x, y), width, height)
+        this(new Vertex(x, y), width, height);
     }
 
     public GeometricObject(double width, double height){
-        this(0, 0, width, height)
+        this(0, 0, width, height);
     }
 
-    public GeometricObject(Vertex pos ){
-        this(0,0,pos);
+    public GeometricObject(Vertex pos){
+        this(pos, 0, 0);
     }
 
     public GeometricObject(){
-        this();
+        this(0, 0);
     }
 
     public double getWidth(){return width;}
     public double getHeigth(){return height;}
     public Vertex getPos(){return pos;}
+
+    public String toString(){
+        return "width = "+width+" height = "+height+" pos = "+pos;
+    }
+
+    public double circumference(){
+        return 2*(width+height);
+    }
+
+    public double area(){
+        return width*height;
+    }
 
 }

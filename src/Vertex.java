@@ -62,9 +62,11 @@ public class Vertex {
         return v3.Length();
     }
 
-    public double normalize(){
+    public Vertex normalize(){
         double factor = this.Length();
         x = x/factor;
         y = y/factor;
+        Vertex v = new Vertex(x, y);
+        return v;
     }
 }
